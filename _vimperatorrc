@@ -1,0 +1,35 @@
+" "urn the menu and toolbar on.
+:set guioptions+=mT
+
+" Turn off the show tabs by default.
+:set showtabline=1
+
+" Turn session tracking off.
+:set! browser.startup.page=1
+
+" Allow user to click in address bar.
+:set! browser.urlbar.clickSelectsAll=true
+:set! browser.urlbar.doubleClickSelectsAll=true
+
+" Map Ctrl + n for new windows
+:map <C-n> <C-v><C-n>
+
+" Map Ctrl + t for new tabs
+:map <C-t> :tabopen<Enter>
+
+" Map paste operation normally.
+:imap <C-v> <C-v>
+
+" Pass through mode for gmail and google reader
+:autocmd LocationChange .* :js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL)
+:autocmd LocationChange .* :js modes.passAllKeys = /www\.google\.com\/reader\/view/.test(buffer.URL)
+
+" Provide awesomebar style autocompletion.
+:set wildoptions=auto
+:set cpt=l
+
+" Make link highlighting easier to read.
+:set hs=z-index:5000;font:normal 8pt sans-serif;color:white;background:rgba(192,0,0,0.7);padding:0px 1px 0px 1px;position:absolute
+
+
+
